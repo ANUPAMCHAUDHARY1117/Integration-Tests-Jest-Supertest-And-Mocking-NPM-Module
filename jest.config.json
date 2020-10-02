@@ -1,0 +1,5 @@
+{
+    "testRegex": "((\\.|/*.)(spec))\\.js?$",
+    "clearMocks": true,
+    "testEnvironment": "node"
+}
