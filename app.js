@@ -4,6 +4,11 @@ const PORT = process.env.PORT || 8000;
 const jwt = require('jsonwebtoken');
 const secretAccessKey = process.env.secretAccessKey || 'SecretAccessKey';
 
+// To mock any NPM module make sure that you are not destructuring them while requiring them in your file.
+// For example - If we use 
+// const {verify} = require('jwt'); in place of const jwt = require();
+// Jest would not be able to mock destructured modules. So, always keep in mind while writing your code to not to use destructured imports
+
 app.get('/verify-access-token', (req, res) => {
     const accessToken = req.headers['access-token'];
     try {
